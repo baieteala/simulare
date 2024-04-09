@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://da3ystiu2x8d6"]
+
+[ext_resource type="Texture2D" uid="uid://dcpfri4mxn5uy" path="res://art/tiles_simulare/frames/knight_m_idle_anim_f0.png" id="1_7khp2"]
+[ext_resource type="Script" path="res://scenes/player.gd" id="1_33xk4"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_7qn1i"]
+radius = 7.0
+height = 20.0
+
+[node name="Player" type="CharacterBody2D"]
+script = ExtResource("1_33xk4")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(15, 21)
+texture = ExtResource("1_7khp2")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(15, 26)
+shape = SubResource("CapsuleShape2D_7qn1i")
