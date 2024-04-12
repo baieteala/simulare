@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://juq161grfc21"]
+
+[ext_resource type="Script" path="res://scenes/Characters/character.gd" id="1_yis44"]
+[ext_resource type="Script" path="res://scenes/Characters/FSM.gd" id="2_ya2mw"]
+
+[node name="Character" type="CharacterBody2D"]
+script = ExtResource("1_yis44")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+
+[node name="FiniteStateMachine" type="Node" parent="."]
+script = ExtResource("2_ya2mw")

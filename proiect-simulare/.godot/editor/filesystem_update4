@@ -1,4 +1,6 @@
 res://default_env.tres
 res://scenes/player.tscn
-res://scenes/player.gd
 res://Game.tscn
+res://scenes/Characters/character.tscn
+res://scenes/Characters/character.gd
+res://scenes/Characters/FSM.gd
