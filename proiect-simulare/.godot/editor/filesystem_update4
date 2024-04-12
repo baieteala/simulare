@@ -4,3 +4,7 @@ res://Game.tscn
 res://scenes/Characters/character.tscn
 res://scenes/Characters/character.gd
 res://scenes/Characters/FSM.gd
+res://scenes/Characters/Enemies/enemy.tscn
+res://scenes/Characters/Enemies/enemy.gd
+res://scenes/Characters/Enemies/skeleton.tscn
+res://scenes/Characters/Enemies/SkeletonFSM.gd
