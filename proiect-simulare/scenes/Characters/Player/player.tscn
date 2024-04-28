@@ -1,0 +1,140 @@
+[gd_scene load_steps=15 format=3 uid="uid://cf3apfmjgsdjf"]
+
+[ext_resource type="PackedScene" uid="uid://juq161grfc21" path="res://scenes/Characters/character.tscn" id="1_kgb2a"]
+[ext_resource type="Texture2D" uid="uid://c0f3oy5gchedt" path="res://art/tiles_simulare/frames/player/idle/knight_m_idle_anim_f0.png" id="2_ytt01"]
+[ext_resource type="Texture2D" uid="uid://c7ogyhfbjh3bs" path="res://art/tiles_simulare/frames/player/idle/knight_m_idle_anim_f1.png" id="3_5axcn"]
+[ext_resource type="Texture2D" uid="uid://cl60h0645e5ot" path="res://art/tiles_simulare/frames/player/idle/knight_m_idle_anim_f2.png" id="4_xamlo"]
+[ext_resource type="Texture2D" uid="uid://dfqdcmv58s21n" path="res://art/tiles_simulare/frames/player/idle/knight_m_idle_anim_f3.png" id="5_k7746"]
+[ext_resource type="Texture2D" uid="uid://bgp4mqxtqu3j6" path="res://art/tiles_simulare/frames/player/run/knight_m_run_anim_f0.png" id="6_plixq"]
+[ext_resource type="Texture2D" uid="uid://doy3n81ljtctd" path="res://art/tiles_simulare/frames/player/run/knight_m_run_anim_f1.png" id="7_7pvdm"]
+[ext_resource type="Texture2D" uid="uid://bsdq5r5pw7qvi" path="res://art/tiles_simulare/frames/player/run/knight_m_run_anim_f2.png" id="8_77uvy"]
+[ext_resource type="Texture2D" uid="uid://txj7xjaetcnf" path="res://art/tiles_simulare/frames/player/run/knight_m_run_anim_f3.png" id="9_4hsnp"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_bp6me"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_ytt01")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_5axcn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_xamlo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_k7746")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_plixq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_7pvdm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_77uvy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_4hsnp")
+}],
+"loop": true,
+"name": &"move",
+"speed": 5.0
+}]
+
+[sub_resource type="Animation" id="Animation_own7m"]
+resource_name = "idle"
+length = 0.5
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"idle"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimatedSprite2D:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3]
+}
+
+[sub_resource type="Animation" id="Animation_wygqm"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [1]
+}
+
+[sub_resource type="Animation" id="Animation_fo0u3"]
+resource_name = "move"
+length = 0.6
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"move"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimatedSprite2D:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_it5ev"]
+_data = {
+"RESET": SubResource("Animation_wygqm"),
+"idle": SubResource("Animation_own7m"),
+"move": SubResource("Animation_fo0u3")
+}
+
+[node name="Player" instance=ExtResource("1_kgb2a")]
+
+[node name="AnimatedSprite2D" parent="." index="0"]
+sprite_frames = SubResource("SpriteFrames_bp6me")
+animation = &"move"
+frame = 1
+
+[node name="AnimationPlayer" parent="." index="2"]
+libraries = {
+"": SubResource("AnimationLibrary_it5ev")
+}

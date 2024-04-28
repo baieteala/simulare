@@ -1,5 +1,8 @@
+res://art/tiles_simulare/frames/player/run
+res://art/tiles_simulare/frames/player/idle
+res://scenes/Characters/Player
+res://scenes/Characters
 res://art/tiles_simulare
 res://scenes/Characters/Enemies
-res://scenes/Characters
 res://scenes
 res://art/tiles_simulare/frames
