@@ -5,9 +5,15 @@ const FRICTION: float = 0.15
 
 @export var accerelation: int = 40
 @export var maxSpeed: int = 100
+@export var hp: int = 3 :
+	set(new_hp):
+		hp = new_hp
+		emit_signal("hp_changed", new_hp)
+signal hp_changed(new_hp)
 
 @onready var animated_sprite: AnimatedSprite2D = get_node("AnimatedSprite2D")
 
+@onready var state_machine: Node = get_node("FiniteStateMachine")
 var movingDirection: Vector2 = Vector2.ZERO
 
 func _physics_process(delta: float) -> void:
@@ -19,3 +25,12 @@ func move() -> void:
 	velocity += movingDirection * accerelation
 	velocity = velocity.limit_length(maxSpeed)
 	
+	
+func take_damage(dam: int, dir: Vector2, force: int) -> void:
+	self.hp -= dam
+	if hp > 0:
+		state_machine.set_state(state_machine.states.hurt)
+		velocity += dir * force
+	else:
+		state_machine.set_state(state_machine.states.dead)
+		velocity += dir * force * 2

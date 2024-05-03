@@ -1,8 +1,14 @@
+Node
+TextureProgressBar
+CanvasLayer
+CollisionShape2D
+Hitbox
+Area2D
 Timer
+AnimationPlayer
+Node2D
+Sprite2D
 NavigationRegion2D
 FiniteStateMachine
-AnimationPlayer
-CollisionShape2D
 AnimatedSprite2D
 CharacterBody2D
-Sprite2D

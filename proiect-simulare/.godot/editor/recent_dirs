@@ -1,8 +1,10 @@
+res://art/tiles_simulare/frames
+res://scenes/Characters/Enemies/Orc
+res://scenes/Characters/Enemies
+res://scenes/Characters
+res://
+res://scenes/Characters/Player
 res://art/tiles_simulare/frames/player/run
 res://art/tiles_simulare/frames/player/idle
-res://scenes/Characters/Player
-res://scenes/Characters
 res://art/tiles_simulare
-res://scenes/Characters/Enemies
 res://scenes
-res://art/tiles_simulare/frames

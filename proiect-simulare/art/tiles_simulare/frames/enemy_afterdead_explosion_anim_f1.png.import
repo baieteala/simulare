@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://t0plulgxmpag"
-path="res://.godot/imported/weapon_anime_sword.png-36707c1915f2f867c051f5e845deb006.ctex"
+uid="uid://dp0ss7hnr27oe"
+path="res://.godot/imported/enemy_afterdead_explosion_anim_f1.png-02f2c2b1bf058e4d0b678d8c53b0601e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art/tiles_simulare/frames/weapon_anime_sword.png"
-dest_files=["res://.godot/imported/weapon_anime_sword.png-36707c1915f2f867c051f5e845deb006.ctex"]
+source_file="res://art/tiles_simulare/frames/enemy_afterdead_explosion_anim_f1.png"
+dest_files=["res://.godot/imported/enemy_afterdead_explosion_anim_f1.png-02f2c2b1bf058e4d0b678d8c53b0601e.ctex"]
 
 [params]
 

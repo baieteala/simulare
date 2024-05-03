@@ -5,8 +5,6 @@
 
 [node name="Character" type="CharacterBody2D"]
 script = ExtResource("1_yis44")
-accerelation = null
-maxSpeed = null
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 

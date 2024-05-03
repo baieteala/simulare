@@ -1,12 +1,14 @@
-[gd_scene load_steps=3 format=3 uid="uid://bxoiqrsuolx86"]
+[gd_scene load_steps=3 format=3 uid="uid://bp1n2grflfda4"]
 
-[ext_resource type="PackedScene" uid="uid://juq161grfc21" path="res://scenes/Characters/character.tscn" id="1_h4bku"]
-[ext_resource type="Script" path="res://scenes/Characters/Enemies/enemy.gd" id="2_r516d"]
+[ext_resource type="PackedScene" uid="uid://juq161grfc21" path="res://scenes/Characters/character.tscn" id="1_o6316"]
+[ext_resource type="Script" path="res://scenes/Characters/Enemies/enemy.gd" id="2_4yhd6"]
 
-[node name="Enemy" instance=ExtResource("1_h4bku")]
+[node name="Enemy" instance=ExtResource("1_o6316")]
 collision_layer = 4
 collision_mask = 4
-script = ExtResource("2_r516d")
+script = ExtResource("2_4yhd6")
+accerelation = 40
+maxSpeed = 100
 
 [node name="PathTimer" type="Timer" parent="." index="4"]
 wait_time = 0.5
