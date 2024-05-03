@@ -1,2 +1,13 @@
 res://default_env.tres
 res://Game.tscn
+res://scenes/Characters/Player/player.tscn
+res://scenes/Characters/character.tscn
+res://scenes/Characters/Enemies/enemy.gd
+res://scenes/Characters/Enemies/enemy.tscn
+res://scenes/Characters/Enemies/Orc/orc.tscn
+res://scenes/Characters/Enemies/Orc/OrcFiniteStateMachine.gd
+res://scenes/Characters/Hitbox.gd
+res://scenes/Characters/character.gd
+res://scenes/Characters/Player/player.gd
+res://scenes/Characters/Enemies/Orc/orc.gd
+res://scenes/Characters/Player/FiniteStateMachine.gd
