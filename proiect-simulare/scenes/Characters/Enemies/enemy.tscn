@@ -7,8 +7,6 @@
 collision_layer = 4
 collision_mask = 4
 script = ExtResource("2_4yhd6")
-accerelation = 40
-maxSpeed = 100
 
 [node name="PathTimer" type="Timer" parent="." index="4"]
 wait_time = 0.5
