@@ -9,3 +9,6 @@ res://BackgroundMusic.tscn
 res://scenes/Menu/PauseMenu.tscn
 res://scenes/Menu/Volume.gd
 res://scenes/Characters/Hitbox.gd
+res://scenes/Rooms/SecondRoom.tscn
+res://SecondRoom.tscn
+res://scenes/Rooms/EntryRoom.tscn
