@@ -16,7 +16,9 @@ func _init() -> void:
 
 func _on_body_entered(body: Node) -> void:
 	if body is PhysicsBody2D:
-		body.take_damage(damage, knockback_dir, knockback_force)
+		# todo sa schimb aici!!!
+		pass
+		#bodyd.take_damage(damage, knockback_dir, knockback_force)
 
 
 
