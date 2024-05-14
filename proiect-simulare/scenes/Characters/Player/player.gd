@@ -7,6 +7,7 @@ extends Character
 var speed = 150
 
 func _ready():
+	print("se ajunge aici")
 	if health_bar != null:
 		health_bar.init_health(hp)
 

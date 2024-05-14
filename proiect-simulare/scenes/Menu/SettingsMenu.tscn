@@ -1,6 +1,8 @@
-[gd_scene load_steps=2 format=3 uid="uid://bipmmdmsgn0pu"]
+[gd_scene load_steps=4 format=3 uid="uid://bipmmdmsgn0pu"]
 
 [ext_resource type="Script" path="res://scenes/Menu/SettingsMenu.gd" id="1_24vys"]
+[ext_resource type="Texture2D" uid="uid://bdcxwoj8q4kb5" path="res://art/menu_background.jpeg" id="2_pto56"]
+[ext_resource type="Script" path="res://scenes/Menu/Volume.gd" id="3_jwjik"]
 
 [node name="SettingsMenu" type="Control"]
 layout_mode = 3
@@ -10,6 +12,11 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_24vys")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(240, 135)
+scale = Vector2(0.375, 0.375)
+texture = ExtResource("2_pto56")
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 1
@@ -28,13 +35,22 @@ grow_vertical = 2
 [node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
 layout_mode = 2
 
-[node name="Button1" type="Button" parent="MarginContainer/VBoxContainer"]
+[node name="Volume" type="HSlider" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
-text = "un buton"
+max_value = 1.0
+step = 0.001
+value = 1.0
+script = ExtResource("3_jwjik")
+bus_name = "Master"
 
-[node name="Button2" type="Button" parent="MarginContainer/VBoxContainer"]
-layout_mode = 2
-text = "alt buton"
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/Volume"]
+layout_mode = 0
+offset_left = 5.0
+offset_top = -21.5
+offset_right = 64.0
+offset_bottom = 1.5
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+text = "Volume"
 
 [node name="Back" type="Button" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2

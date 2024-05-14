@@ -112,7 +112,7 @@ tracks/2/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [false]
+"values": [true]
 }
 
 [sub_resource type="Animation" id="Animation_svcol"]
@@ -402,7 +402,6 @@ offset_right = 12.0
 offset_bottom = -15.0
 
 [node name="AnimatedSprite2D" parent="." index="1"]
-visible = false
 sprite_frames = SubResource("SpriteFrames_bp6me")
 animation = &"idle"
 frame = 1
