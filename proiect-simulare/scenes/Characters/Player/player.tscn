@@ -19,6 +19,9 @@
 [ext_resource type="Texture2D" uid="uid://t0plulgxmpag" path="res://art/tiles_simulare/frames/weapon_anime_sword.png" id="12_6blbv"]
 [ext_resource type="Script" path="res://scenes/Characters/Hitbox.gd" id="13_ful3i"]
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_fhty2"]
+radius = 8.0
+
 [sub_resource type="SpriteFrames" id="SpriteFrames_bp6me"]
 animations = [{
 "frames": [{
@@ -72,9 +75,6 @@ animations = [{
 "name": &"move",
 "speed": 5.0
 }]
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_ax3ac"]
-radius = 6.0
 
 [sub_resource type="Animation" id="Animation_wygqm"]
 length = 0.001
@@ -401,14 +401,17 @@ offset_top = -17.0
 offset_right = 12.0
 offset_bottom = -15.0
 
-[node name="AnimatedSprite2D" parent="." index="1"]
+[node name="Area2D" parent="." index="1" groups=["player"]]
+
+[node name="CollisionShape2D" parent="Area2D" index="0"]
+position = Vector2(2.08165e-12, 5)
+scale = Vector2(0.9, 0.9)
+shape = SubResource("CircleShape2D_fhty2")
+
+[node name="AnimatedSprite2D" parent="." index="2"]
 sprite_frames = SubResource("SpriteFrames_bp6me")
 animation = &"idle"
 frame = 1
-
-[node name="CollisionShape2D" parent="." index="2"]
-position = Vector2(0, 7)
-shape = SubResource("CircleShape2D_ax3ac")
 
 [node name="AnimationPlayer" parent="." index="3"]
 libraries = {
@@ -450,3 +453,5 @@ libraries = {
 [node name="Camera" type="Camera2D" parent="." index="6"]
 position = Vector2(0, 4)
 position_smoothing_enabled = true
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]

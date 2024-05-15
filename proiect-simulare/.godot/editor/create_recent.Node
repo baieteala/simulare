@@ -1,4 +1,9 @@
+Timer
+Area2D
+CollisionShape2D
+AnimationPlayer
 ColorRect
+CanvasLayer
 CenterContainer
 Label
 RichTextLabel
@@ -7,9 +12,3 @@ HSlider
 AudioStreamPlayer2D
 Sprite2D
 TextureRect
-VBoxContainer
-MarginContainer
-Node
-Timer
-ProgressBar
-TextureProgressBar

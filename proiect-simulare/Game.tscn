@@ -28,3 +28,9 @@ offset_left = 107.0
 offset_top = 121.0
 offset_right = 107.0
 offset_bottom = 121.0
+
+[node name="Timer" type="Timer" parent="."]
+process_callback = 0
+wait_time = 5.0
+
+[connection signal="timeout" from="Timer" to="EntryRoom" method="_on_timer_timeout"]

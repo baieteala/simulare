@@ -1,3 +1,4 @@
+# abstract class for all the ch aracters states
 extends Node
 class_name FiniteStateMachine
 

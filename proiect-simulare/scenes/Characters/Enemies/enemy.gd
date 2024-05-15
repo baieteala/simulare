@@ -27,9 +27,3 @@ func chase() -> void:
 func _physics_process(delta):
 	if is_instance_valid(player):
 		position += (player.position - position) / acceleration
-		
-	# Check for collision with player's hitbox
-	# Assuming player's hitbox is an Area2D node with a body_entered signal connected
-	# Replace "PlayerHitbox" with the actual name of the player's hitbox node
-	#if player.sword_hitbox.is_colliding():
-		#player.take_damage(DAMAGE_AMOUNT, velocity.normalized(), KNOCKBACK_FORCE)

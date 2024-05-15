@@ -1,5 +1,6 @@
 extends Character
 
+const second_room = preload("res://scenes/Rooms/SecondRoom.tscn")
 @onready var sword: Node2D = get_node("Sword")
 @onready var sword_animation: AnimationPlayer = sword.get_node("SwordAnimation")
 @onready var sword_hitbox: Area2D = get_node("Sword/Node2D/Sprite/Hitbox")
@@ -56,3 +57,10 @@ func take_damage(dam: int, dir: Vector2, force: int) -> void:
 	else:
 		state_machine.set_state(state_machine.states.dead)
 		velocity += dir * force * 2
+
+
+func _on_area_2d_area_entered(area):
+	if GlobalVariables.num_of_enemies == 0 and area.is_in_group("go_to_second_room"):
+		TransitionScene.transition()
+		await TransitionScene.on_transition_finished
+		get_tree().change_scene_to_packed(second_room)

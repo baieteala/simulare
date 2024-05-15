@@ -25,3 +25,5 @@ func move() -> void:
 	velocity += movingDirection * acceleration
 	velocity = velocity.limit_length(maxSpeed)
 	
+func take_damage(dam: int, dir: Vector2, force: int) -> void:
+	pass
