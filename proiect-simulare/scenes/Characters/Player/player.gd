@@ -63,16 +63,14 @@ func take_damage(dam: int, dir: Vector2, force: int) -> void:
 
 
 func _on_area_2d_area_entered(area):
-	# TODO trebuie sa rezolvi cumva aici, sa faci in asa fel incat sa poti sa te duci si la a 3-a camera
-	# get_tree().get_current_scene().get_name() returneaza 'Game' for some reason, desi ma asteptam 
-	# sa returneze EntryRoom. Poate ii dai de cap
 	print("am intrat, nr de mobi: ", GlobalVariables.num_of_enemies)
-	if GlobalVariables.num_of_enemies == 0 and area.is_in_group("go_to_second_room"):
-		TransitionScene.transition()
-		await TransitionScene.on_transition_finished
-		#if get_tree().get_current_scene() == $"res://scenes/Rooms/EntryRoom.tscn":
-		get_tree().change_scene_to_packed(second_room)
-		#else:
-			#print(get_tree().get_current_scene().get_name())			
-			#get_tree().change_scene_to_packed(boss_room)
+	if GlobalVariables.num_of_enemies == 0:
+		if area.is_in_group("go_to_second_room"):
+			TransitionScene.transition()
+			await TransitionScene.on_transition_finished	
+			get_tree().change_scene_to_packed(second_room)
+		if area.is_in_group("go_to_boss"):
+			TransitionScene.transition()
+			await TransitionScene.on_transition_finished	
+			get_tree().change_scene_to_packed(boss_room)
 			

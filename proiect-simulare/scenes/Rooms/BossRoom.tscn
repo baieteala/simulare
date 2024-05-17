@@ -1,13 +1,8 @@
 [gd_scene load_steps=2 format=3 uid="uid://dnev3nxgbwvfq"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_lgn3g"]
-radius = 8.06226
+[ext_resource type="PackedScene" uid="uid://cf3apfmjgsdjf" path="res://scenes/Characters/Player/player.tscn" id="1_xw1ap"]
 
 [node name="BossRoom" type="Area2D"]
 
-[node name="Area2D" type="Area2D" parent="." groups=["go_to_second_room"]]
-position = Vector2(36, 23)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(-12, -15)
-shape = SubResource("CircleShape2D_lgn3g")
+[node name="Player" parent="." instance=ExtResource("1_xw1ap")]
+position = Vector2(78, 222)

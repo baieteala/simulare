@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://dg4i6t8gws5r1"]
+[gd_scene load_steps=19 format=3 uid="uid://dg4i6t8gws5r1"]
 
 [ext_resource type="Script" path="res://scenes/Rooms/EntryRoom.gd" id="1_ro2ft"]
 [ext_resource type="PackedScene" uid="uid://b0sh6q3aum0jl" path="res://scenes/Other/Door.tscn" id="1_t54hf"]
@@ -5161,6 +5161,9 @@ sources/1 = SubResource("TileSetAtlasSource_etupe")
 sources/2 = SubResource("TileSetAtlasSource_1w6v5")
 sources/3 = SubResource("TileSetAtlasSource_lk5x4")
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_fbals"]
+radius = 8.06226
+
 [node name="SecondRoom" type="Node2D"]
 
 [node name="Room" type="TileMap" parent="."]
@@ -5181,3 +5184,10 @@ position = Vector2(78, 222)
 [node name="BossDoor" parent="." instance=ExtResource("1_t54hf")]
 position = Vector2(442, 42)
 destination = "BossRoom"
+
+[node name="Area2D" type="Area2D" parent="." groups=["go_to_boss"]]
+position = Vector2(36, 23)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(407, 26)
+shape = SubResource("CircleShape2D_fbals")
