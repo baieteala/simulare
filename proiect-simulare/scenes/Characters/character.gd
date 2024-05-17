@@ -5,7 +5,7 @@ const FRICTION: float = 0.15
 
 @export var acceleration: int = 40
 @export var maxSpeed: int = 100
-@export var hp: int = 100 :
+@export var hp: int = 100 : 
 	set(new_hp):
 		hp = new_hp
 		emit_signal("hp_changed", new_hp)
@@ -24,6 +24,14 @@ func move() -> void:
 	movingDirection = movingDirection.normalized()
 	velocity += movingDirection * acceleration
 	velocity = velocity.limit_length(maxSpeed)
-	
-func take_damage(dam: int, dir: Vector2, force: int) -> void:
-	pass
+#func take_damage(dam: int, dir: Vector2, force: int) -> void:
+	#print('damage taken')
+	#self.hp -= dam
+	##if health_bar != null:
+		##health_bar.set_health(self.hp)
+	#if hp > 0:
+		#state_machine.set_state(state_machine.states.hurt)
+		#velocity += dir * force
+	#else:
+		#state_machine.set_state(state_machine.states.dead)
+		#velocity += dir * force * 2

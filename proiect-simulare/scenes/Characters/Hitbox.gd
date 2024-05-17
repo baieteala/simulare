@@ -1,7 +1,7 @@
 extends Area2D
 class_name Hitbox
 
-@export var damage: int = 1
+@export var damage: int = 10
 var knockback_dir: Vector2 = Vector2.ZERO
 @export var knockback_force: int = 300
 
@@ -17,6 +17,5 @@ func _init() -> void:
 func _on_body_entered(body: Node) -> void:
 	if body is PhysicsBody2D:
 		body.take_damage(damage, knockback_dir, knockback_force)
-
 
 

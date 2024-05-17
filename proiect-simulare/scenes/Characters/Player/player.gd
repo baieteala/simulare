@@ -8,7 +8,6 @@ const second_room = preload("res://scenes/Rooms/SecondRoom.tscn")
 var speed = 150
 
 func _ready():
-	print("se ajunge aici")
 	if health_bar != null:
 		health_bar.init_health(hp)
 
@@ -48,6 +47,7 @@ func _physics_process(delta):
 	move_and_slide()
 
 func take_damage(dam: int, dir: Vector2, force: int) -> void:
+	print('damage taken - player')
 	self.hp -= dam
 	if health_bar != null:
 		health_bar.set_health(self.hp)
@@ -60,6 +60,7 @@ func take_damage(dam: int, dir: Vector2, force: int) -> void:
 
 
 func _on_area_2d_area_entered(area):
+	print("am intrat, nr de mobi: ", GlobalVariables.num_of_enemies)
 	if GlobalVariables.num_of_enemies == 0 and area.is_in_group("go_to_second_room"):
 		TransitionScene.transition()
 		await TransitionScene.on_transition_finished

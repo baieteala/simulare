@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=3 uid="uid://cf3apfmjgsdjf"]
+[gd_scene load_steps=32 format=3 uid="uid://cf3apfmjgsdjf"]
 
 [ext_resource type="PackedScene" uid="uid://juq161grfc21" path="res://scenes/Characters/character.tscn" id="1_kgb2a"]
 [ext_resource type="Script" path="res://scenes/Characters/Player/player.gd" id="2_dqwta"]
@@ -19,8 +19,10 @@
 [ext_resource type="Texture2D" uid="uid://t0plulgxmpag" path="res://art/tiles_simulare/frames/weapon_anime_sword.png" id="12_6blbv"]
 [ext_resource type="Script" path="res://scenes/Characters/Hitbox.gd" id="13_ful3i"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_fhty2"]
-radius = 8.0
+[sub_resource type="CircleShape2D" id="CircleShape2D_x6y1b"]
+radius = 9.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_0t2gl"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_bp6me"]
 animations = [{
@@ -401,25 +403,25 @@ offset_top = -17.0
 offset_right = 12.0
 offset_bottom = -15.0
 
-[node name="Area2D" parent="." index="1" groups=["player"]]
+[node name="CollisionShape2D" parent="." index="1"]
+position = Vector2(1, 6)
+shape = SubResource("CircleShape2D_x6y1b")
 
-[node name="CollisionShape2D" parent="Area2D" index="0"]
-position = Vector2(2.08165e-12, 5)
-scale = Vector2(0.9, 0.9)
-shape = SubResource("CircleShape2D_fhty2")
+[node name="Area2D" parent="." index="2" groups=["player"]]
 
-[node name="AnimatedSprite2D" parent="." index="2"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" index="0"]
+position = Vector2(0, 6)
+shape = SubResource("CircleShape2D_0t2gl")
+
+[node name="AnimatedSprite2D" parent="." index="3"]
 sprite_frames = SubResource("SpriteFrames_bp6me")
 animation = &"idle"
 frame = 1
 
-[node name="AnimationPlayer" parent="." index="3"]
+[node name="AnimationPlayer" parent="." index="4"]
 libraries = {
 "": SubResource("AnimationLibrary_it5ev")
 }
-
-[node name="FiniteStateMachine" parent="." index="4"]
-script = ExtResource("11_6rhfc")
 
 [node name="Sword" type="Node2D" parent="." index="5"]
 
@@ -453,5 +455,8 @@ libraries = {
 [node name="Camera" type="Camera2D" parent="." index="6"]
 position = Vector2(0, 4)
 position_smoothing_enabled = true
+
+[node name="FiniteStateMachine" parent="." index="7"]
+script = ExtResource("11_6rhfc")
 
 [connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]

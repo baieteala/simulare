@@ -1,6 +1,6 @@
+CollisionShape2D
 Timer
 Area2D
-CollisionShape2D
 AnimationPlayer
 ColorRect
 CanvasLayer

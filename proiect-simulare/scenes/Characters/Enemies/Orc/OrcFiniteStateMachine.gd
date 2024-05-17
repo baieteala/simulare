@@ -27,5 +27,6 @@ func _enter_state(_previous_state: int, _new_state: int) -> void:
 	if _new_state == states.hurt:
 		animation_player.play("hurt")
 	if _new_state == states.dead:
+		GlobalVariables.num_of_enemies -= 1
 		animation_player.play("dead")
 

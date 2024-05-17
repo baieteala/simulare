@@ -14,7 +14,7 @@ func _process(delta):
 	pass
 
 func _input(event):
-	# easter egg :)))))
+	# easter egg :)))))d
 	# ui_select = spacebar
 	if event.is_action("ui_select") and event.is_pressed():
 		var orc := orc_scene.instantiate()

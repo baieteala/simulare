@@ -4,7 +4,7 @@ class_name Enemy
 var path: PackedVector2Array
 @onready var navigation: NavigationRegion2D = get_tree().current_scene.get_node("NavigationRegion2D")
 @onready var player: CharacterBody2D = get_tree().current_scene.get_node("Player")
-@onready var health_bar = get_node("HealthBar")
+#@onready var health_bar = get_node("HealthBar")
 
 const DAMAGE_AMOUNT: int = 10  # Adjust damage amount as needed
 const KNOCKBACK_FORCE: int = 200  # Adjust knockback force as needed

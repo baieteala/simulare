@@ -18,16 +18,16 @@ constrain_avoidance = true
 [node name="Player" parent="." instance=ExtResource("2_qb02i")]
 position = Vector2(98, 112)
 
-[node name="PauseMenu" parent="." instance=ExtResource("4_33v5x")]
+[node name="PauseMenu" parent="Player" instance=ExtResource("4_33v5x")]
 process_mode = 2
 visible = false
 anchors_preset = -1
 anchor_right = 0.0
 anchor_bottom = 0.0
-offset_left = 107.0
-offset_top = 121.0
-offset_right = 107.0
-offset_bottom = 121.0
+offset_left = 9.0
+offset_top = 9.0
+offset_right = 9.0
+offset_bottom = 9.0
 
 [node name="Timer" type="Timer" parent="."]
 process_callback = 0

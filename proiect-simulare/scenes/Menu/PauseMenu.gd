@@ -1,6 +1,6 @@
 extends Control
 
-@onready var game = $"../"
+@onready var game = $"../../"
 
 func _on_resume_pressed():
 	game.pause()
