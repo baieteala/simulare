@@ -4,6 +4,7 @@ var orc_scene = preload("res://scenes/Characters/Enemies/Orc/orc.tscn")
 var number_of_enemies := 0
 var time_passed : float = 0
 @onready var game = get_parent()
+@onready var thisRoom = $"."
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	print(GlobalVariables.num_of_enemies)
@@ -29,7 +30,7 @@ func spawn_enemy():
 	# putem sa spawnam altfel cand om avea si alti monstrii :)))
 	var orc := orc_scene.instantiate()
 	orc.position = Vector2(randf_range(0,500),100)
-	game.add_child(orc)
+	thisRoom.add_child(orc)
 	GlobalVariables.num_of_enemies += 1
 
 

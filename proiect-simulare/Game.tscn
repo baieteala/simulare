@@ -1,8 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://d2a41nqkxmcw7"]
+[gd_scene load_steps=4 format=3 uid="uid://d2a41nqkxmcw7"]
 
 [ext_resource type="PackedScene" uid="uid://dw87yomj4hlsk" path="res://scenes/Rooms/EntryRoom.tscn" id="1_04kkj"]
 [ext_resource type="Script" path="res://Game.gd" id="1_r58b4"]
-[ext_resource type="PackedScene" uid="uid://cf3apfmjgsdjf" path="res://scenes/Characters/Player/player.tscn" id="2_qb02i"]
 [ext_resource type="PackedScene" uid="uid://cn6aqeu2v6qlb" path="res://scenes/Menu/PauseMenu.tscn" id="4_33v5x"]
 
 [node name="Game" type="Node2D"]
@@ -15,19 +14,16 @@ position = Vector2(-140, -18)
 [node name="NavigationRegion2D" type="NavigationRegion2D" parent="."]
 constrain_avoidance = true
 
-[node name="Player" parent="." instance=ExtResource("2_qb02i")]
-position = Vector2(98, 112)
-
-[node name="PauseMenu" parent="Player" instance=ExtResource("4_33v5x")]
+[node name="PauseMenu" parent="." instance=ExtResource("4_33v5x")]
 process_mode = 2
 visible = false
 anchors_preset = -1
 anchor_right = 0.0
 anchor_bottom = 0.0
-offset_left = 9.0
-offset_top = 9.0
-offset_right = 9.0
-offset_bottom = 9.0
+offset_left = 107.0
+offset_top = 121.0
+offset_right = 107.0
+offset_bottom = 121.0
 
 [node name="Timer" type="Timer" parent="."]
 process_callback = 0

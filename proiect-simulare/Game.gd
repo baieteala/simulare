@@ -1,6 +1,6 @@
 extends Node2D
 
-@onready var pause_menu = $Player/PauseMenu
+@onready var pause_menu = $PauseMenu
 
 @onready var timer = get_node("Timer")
 var state = false
