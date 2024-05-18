@@ -1,8 +1,3 @@
-[gd_scene load_steps=2 format=3 uid="uid://dnev3nxgbwvfq"]
-
-[ext_resource type="PackedScene" uid="uid://cf3apfmjgsdjf" path="res://scenes/Characters/Player/player.tscn" id="1_xw1ap"]
+[gd_scene format=3 uid="uid://dnev3nxgbwvfq"]
 
 [node name="BossRoom" type="Area2D"]
-
-[node name="Player" parent="." instance=ExtResource("1_xw1ap")]
-position = Vector2(78, 222)

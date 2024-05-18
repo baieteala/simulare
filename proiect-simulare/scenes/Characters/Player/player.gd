@@ -8,6 +8,7 @@ const boss_room = preload("res://scenes/Rooms/BossRoom.tscn")
 @onready var sword_animation: AnimationPlayer = sword.get_node("SwordAnimation")
 @onready var sword_hitbox: Area2D = get_node("Sword/Node2D/Sprite/Hitbox")
 @onready var health_bar = get_node("HealthBar")
+@onready var game = get_tree().get_current_scene()
 var speed = 150
 
 func _ready():
@@ -64,13 +65,24 @@ func take_damage(dam: int, dir: Vector2, force: int) -> void:
 
 func _on_area_2d_area_entered(area):
 	print("am intrat, nr de mobi: ", GlobalVariables.num_of_enemies)
-	if GlobalVariables.num_of_enemies == 0:
+	if GlobalVariables.num_of_enemies <= 0:
 		if area.is_in_group("go_to_second_room"):
+			var second_room_node = second_room.instantiate()
+			var first_room_node = get_tree().current_scene.get_node("EntryRoom")
 			TransitionScene.transition()
 			await TransitionScene.on_transition_finished	
-			get_tree().change_scene_to_packed(second_room)
-		if area.is_in_group("go_to_boss"):
+			GlobalVariables.timer.stop()
+			game.add_child(second_room_node)
+			game.move_child(second_room_node,0)
+			game.remove_child(first_room_node)
+			self.position.x = 73.25
+			self.position.y = 225	
+		elif area.is_in_group("go_to_boss"):
+			var second_room_node = game.get_node("SecondRoom")
+			var boss_room_node = boss_room.instantiate()
 			TransitionScene.transition()
 			await TransitionScene.on_transition_finished	
-			get_tree().change_scene_to_packed(boss_room)
-			
+			GlobalVariables.timer.stop()
+			game.add_child(boss_room_node)
+			game.move_child(boss_room_node,0)
+			game.remove_child(second_room_node)

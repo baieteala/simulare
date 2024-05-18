@@ -10,11 +10,7 @@ shader_parameter/amount = null
 
 [node name="PauseMenu" type="Control"]
 layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
+anchors_preset = 0
 script = ExtResource("1_h5rmr")
 
 [node name="ColorRect" type="ColorRect" parent="."]

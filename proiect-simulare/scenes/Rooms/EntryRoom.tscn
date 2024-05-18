@@ -1,11 +1,10 @@
-[gd_scene load_steps=19 format=3 uid="uid://dw87yomj4hlsk"]
+[gd_scene load_steps=17 format=3 uid="uid://dw87yomj4hlsk"]
 
 [ext_resource type="Script" path="res://scenes/Rooms/EntryRoom.gd" id="1_27g8j"]
 [ext_resource type="Texture2D" uid="uid://53yi7dbmgwro" path="res://art/tiles_simulare/atlas_floor-16x16.png" id="1_jsgui"]
 [ext_resource type="Texture2D" uid="uid://de7q2a2jktl6y" path="res://art/tiles_simulare/0x72_DungeonTilesetII_v1.7.png" id="2_ph5yd"]
 [ext_resource type="Texture2D" uid="uid://c0y3nstwkewjo" path="res://art/tiles_simulare/atlas_walls_high-16x32.png" id="3_n3kjb"]
 [ext_resource type="Texture2D" uid="uid://0cpb2dqja1cb" path="res://art/tiles_simulare/atlas_walls_low-16x16.png" id="4_31s8j"]
-[ext_resource type="PackedScene" uid="uid://cf3apfmjgsdjf" path="res://scenes/Characters/Player/player.tscn" id="6_khjlb"]
 [ext_resource type="PackedScene" uid="uid://b0sh6q3aum0jl" path="res://scenes/Other/Door.tscn" id="7_wldlo"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_kvgwi"]
@@ -5152,9 +5151,6 @@ sources/1 = SubResource("TileSetAtlasSource_etupe")
 sources/2 = SubResource("TileSetAtlasSource_1w6v5")
 sources/3 = SubResource("TileSetAtlasSource_lk5x4")
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_ogivb"]
-radius = 8.06226
-
 [node name="EntryRoom" type="Node2D"]
 script = ExtResource("1_27g8j")
 
@@ -5169,17 +5165,7 @@ tile_set = SubResource("TileSet_3s42l")
 format = 2
 layer_0/tile_data = PackedInt32Array(131074, 65537, 1610612741, 131100, 65537, 5, 786434, 65537, 1610612741, 786460, 65537, 5, 327691, 655363, 0, 327692, 655363, 0, 327699, 655363, 0, 393236, 720899, 2, 458772, 720899, 2, 524308, 720899, 2, 589844, 720899, 2, 655380, 720899, 2, 720916, 720899, 2, 393226, 524291, 1, 458762, 524291, 1, 524298, 524291, 1, 589834, 524291, 1, 655370, 524291, 1, 720906, 524291, 1, 327700, 262147, 0, 327690, 262147, 0, 786442, 262147, 0, 786452, 262147, 0, 786451, 589827, 3, 786450, 589827, 3, 786449, 589827, 3, 786448, 589827, 3, 786447, 589827, 3, 786446, 589827, 3, 786445, 589827, 3, 786444, 589827, 3, 786443, 589827, 3, 262164, 786434, 805306368, 262154, 786434, 805306368, 786453, 983042, 5, 786441, 983042, 5, 327698, 655363, 0, 327697, 655363, 0, 327693, 655363, 0, 28, 1, 5, 327695, 1179648, 805306393, 327696, 655363, 0, 327694, 655363, 0, 262160, 917506, 3, 262158, 917506, 3, 393227, 786434, 1342177283, 393235, 786434, 1610612739, 720907, 786434, 1342177283, 720915, 786434, 1610612739, 589839, 983042, 5, 589840, 1245184, 1610612762, 655375, 1245184, 26, 589838, 1245184, 1342177306, 393230, 1179648, 27, 393232, 1179648, 27, 983069, 393216, 9, 983041, 393216, 9, 1048575, 3, 0, 983039, 3, 0, 917503, 3, 0, 851967, 3, 0, 786431, 3, 0, 720895, 3, 0, 655359, 3, 0, 589823, 3, 0, 524287, 3, 0, 458751, 3, 0, 393215, 3, 0, 327679, 3, 0, 262143, 3, 0, 196607, 3, 0, 131071, 3, 0, 65535, 3, 0, 30, 3, 0, 65566, 3, 0, 131102, 3, 0, 196638, 3, 0, 262174, 3, 0, 327710, 3, 0, 393246, 3, 0, 458782, 3, 0, 524318, 3, 0, 589854, 3, 0, 655390, 3, 0, 720926, 3, 0, 786462, 3, 0, 851998, 3, 0, 917534, 3, 0, 983070, 3, 0, 1048606, 983042, 5, 1114111, 983042, 5, -1, 983042, 5, -65506, 983042, 5, 983040, 786434, 805306372, 29, 786434, 1342177284, 458780, 65537, 5, 262147, 65537, 5, 524293, 65537, 5, 655369, 65537, 5, 917525, 65537, 5, 983047, 65537, 5, 65554, 65537, 5, 10, 196609, 0, 15, 196609, 0, 21, 196609, 0, 26, 196609, 0, 589853, 196609, 1342177280, 524313, 196609, 1342177280, 589843, 196609, 1342177280, 589835, 196609, 1610612736, 786440, 196609, 1342177280, 851990, 196609, 1610612736, 393231, 196609, 0, 0, 786434, 1610612740, 1, 1, 5)
 
-[node name="Area2D" type="Area2D" parent="." groups=["go_to_second_room"]]
-position = Vector2(36, 23)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(-12, -15)
-shape = SubResource("CircleShape2D_ogivb")
-
-[node name="Player" parent="." instance=ExtResource("6_khjlb")]
-position = Vector2(217, 126)
-
-[node name="Door" parent="." instance=ExtResource("7_wldlo")]
+[node name="Door" parent="." groups=["go_to_second_room"] instance=ExtResource("7_wldlo")]
 position = Vector2(24, 8)
 destination = "SecondRoom"
 
