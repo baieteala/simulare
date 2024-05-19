@@ -5,3 +5,4 @@ res://scenes/Characters/Player/player.tscn
 res://Game.tscn
 res://scenes/Rooms/SecondRoom.tscn
 res://scenes/Characters/Enemies/Boss/boss.tscn
+res://scenes/Rooms/BossRoom.tscn

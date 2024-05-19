@@ -428,7 +428,19 @@ libraries = {
 
 [node name="Node2D" type="Node2D" parent="Sword" index="0"]
 
-[node name="Sprite" type="Sprite2D" parent="Sword/Node2D" index="0"]
+[node name="TextureLight" type="PointLight2D" parent="Sword/Node2D" index="0"]
+energy = 0.7
+texture = ExtResource("19_3mqek")
+
+[node name="Shadow" type="PointLight2D" parent="Sword/Node2D" index="1"]
+energy = 0.5
+shadow_enabled = true
+shadow_filter = 1
+shadow_filter_smooth = 3.0
+texture = ExtResource("19_3mqek")
+texture_scale = 0.5
+
+[node name="Sprite" type="Sprite2D" parent="Sword/Node2D" index="2"]
 position = Vector2(7, -1)
 rotation = -1.5708
 scale = Vector2(0.642068, 0.703622)
@@ -459,17 +471,5 @@ position_smoothing_enabled = true
 
 [node name="FiniteStateMachine" parent="." index="7"]
 script = ExtResource("11_6rhfc")
-
-[node name="TextureLight" type="PointLight2D" parent="." index="8"]
-energy = 0.7
-texture = ExtResource("19_3mqek")
-
-[node name="Shadow" type="PointLight2D" parent="." index="9"]
-energy = 0.5
-shadow_enabled = true
-shadow_filter = 1
-shadow_filter_smooth = 3.0
-texture = ExtResource("19_3mqek")
-texture_scale = 0.5
 
 [connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]

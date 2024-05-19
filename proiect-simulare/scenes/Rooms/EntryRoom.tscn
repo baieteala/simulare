@@ -5302,7 +5302,4 @@ destination = "SecondRoom"
 [node name="CollisionShape2D" parent="Door" index="0"]
 position = Vector2(5, 9)
 
-[node name="CanvasModulate" type="CanvasModulate" parent="."]
-color = Color(0.0392157, 0.0392157, 0, 1)
-
 [editable path="Door"]
