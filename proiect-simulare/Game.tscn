@@ -55,15 +55,14 @@ text = "Good job! Find the exit
 and get ready for the boss!"
 
 [node name="LabelThirdRoom" type="Label" parent="."]
-visible = false
-offset_left = 23.0
-offset_top = 26.0
-offset_right = 201.0
-offset_bottom = 49.0
+offset_left = 171.0
+offset_top = 171.0
+offset_right = 349.0
+offset_bottom = 194.0
 theme_override_fonts/font = ExtResource("5_bh255")
 theme_override_font_sizes/font_size = 8
-text = "Good job! Find the exit
-and get ready for the boss!"
+text = "Let's goooooo! Congrats!
+You just won the game! "
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
 color = Color(0, 0, 0, 1)

@@ -28,6 +28,7 @@ func _enter_state(_previous_state: int, _new_state: int) -> void:
 		animation_player.play("hurt")
 	if _new_state == states.dead:
 		animation_player.play("dead")
+		GlobalVariables.boss_alive = 0
 		#GlobalVariables.enemies_remaining_room_one -= 1
 		#print("Au mai ramas: ", GlobalVariables.enemies_remaining_room_one)
 		#print("Sunt in total: ", GlobalVariables.enemies_spawned_room_one)

@@ -10,3 +10,4 @@ res://scenes/Characters/Player/player.gd
 res://Game.gd
 res://scenes/Characters/Enemies/enemy.tscn
 res://scenes/Characters/Hitbox.gd
+res://scenes/Characters/Enemies/Boss/BossFiniteStateMachine.gd
