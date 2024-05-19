@@ -17,7 +17,7 @@ position = Vector2(-140, -18)
 constrain_avoidance = true
 
 [node name="Player" parent="." instance=ExtResource("4_hy33g")]
-position = Vector2(219, 133)
+position = Vector2(156, 123)
 
 [node name="PauseMenu" parent="." instance=ExtResource("4_33v5x")]
 process_mode = 2
@@ -55,10 +55,11 @@ text = "Good job! Find the exit
 and get ready for the boss!"
 
 [node name="LabelThirdRoom" type="Label" parent="."]
-offset_left = 171.0
-offset_top = 171.0
-offset_right = 349.0
-offset_bottom = 194.0
+visible = false
+offset_left = 143.0
+offset_top = 176.0
+offset_right = 321.0
+offset_bottom = 199.0
 theme_override_fonts/font = ExtResource("5_bh255")
 theme_override_font_sizes/font_size = 8
 text = "Let's goooooo! Congrats!
