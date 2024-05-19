@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://f1irx4i1pn7v"]
+
+[ext_resource type="Script" path="res://scenes/Other/HealthPotion.gd" id="1_nfup8"]
+[ext_resource type="Texture2D" uid="uid://7gxdhkfq2ns4" path="res://art/potions/basic health potion.png" id="2_ax3ls"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_qk3lx"]
+radius = 101.0
+height = 704.0
+
+[node name="HealthPotion" type="Node2D"]
+script = ExtResource("1_nfup8")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_ax3ls")
+
+[node name="Area2D" type="Area2D" parent="." groups=["health_potion"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CapsuleShape2D_qk3lx")

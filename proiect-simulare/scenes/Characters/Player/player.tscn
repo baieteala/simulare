@@ -459,4 +459,35 @@ position_smoothing_enabled = true
 [node name="FiniteStateMachine" parent="." index="7"]
 script = ExtResource("11_6rhfc")
 
+[node name="DialogBox" type="Control" parent="." index="8"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Panel" type="Panel" parent="DialogBox" index="0"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 9.0
+offset_top = -35.0
+offset_right = 9.0
+offset_bottom = -35.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="DialogBox/Panel" index="0"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/bold_font_size = 0
+bbcode_enabled = true
+fit_content = true
+scroll_active = false
+scroll_following = true
+
 [connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]

@@ -2,10 +2,13 @@ extends Node2D
 
 @onready var pause_menu = $PauseMenu
 @onready var game = $"."
+@onready var dialogBox = get_node("Player").get_node("DialogBox")
+@onready var dialogBoxText = dialogBox.get_node("Panel").get_node("RichTextLabel")
 
 var state = false
 var room
 var time_passed : float = 0
+const text = "Now I have to find a way out!!!"
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	if Input.is_action_pressed("pause"):
@@ -41,5 +44,7 @@ func _on_timer_timeout():
 			room = game.get_node("BossRoom").name
 		SpawnEnemy.spawn_enemy(room)
 	else:
+		dialogBox.visible = true
+		dialogBoxText.append_text(text)
 		GlobalVariables.timer.stop()
 		self.reset_time_passed()

@@ -15,6 +15,7 @@ func spawn_enemy(room):
 			orc_entity.position = Vector2(randf_range(0,480),randf_range(0,270))
 			game.add_child(orc_entity)
 			GlobalVariables.num_of_enemies += 1
+			GlobalVariables.total_enemies_to_be_spawned -= 1
 	elif room == "SecondRoom":
 		for n in 2:
 			var random_entity
@@ -25,7 +26,8 @@ func spawn_enemy(room):
 				random_entity = imp.instantiate()
 			random_entity.position = Vector2(randf_range(0,480),randf_range(0,270))
 			game.add_child(random_entity)
-			GlobalVariables.num_of_enemies += 1	
+			GlobalVariables.num_of_enemies += 1
+			GlobalVariables.total_enemies_to_be_spawned -= 1	
 	elif room == "BossRoom":
 		# fa-ti talentul :))))
 		pass

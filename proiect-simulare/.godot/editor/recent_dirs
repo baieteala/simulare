@@ -1,3 +1,5 @@
+res://art/potions
+res://art/tiles_simulare
 res://art/cursor
 res://Utils
 res://art/tiles_simulare/frames
@@ -8,5 +10,4 @@ res://scenes/Characters
 res://scenes/Characters/Player
 res://art/tiles_simulare/frames/player/run
 res://art/tiles_simulare/frames/player/idle
-res://art/tiles_simulare
 res://scenes

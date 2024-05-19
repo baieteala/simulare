@@ -4,14 +4,17 @@ class_name Player
 
 const second_room = preload("res://scenes/Rooms/SecondRoom.tscn")
 const boss_room = preload("res://scenes/Rooms/BossRoom.tscn")
+
 @onready var sword: Node2D = get_node("Sword")
 @onready var sword_animation: AnimationPlayer = sword.get_node("SwordAnimation")
 @onready var sword_hitbox: Area2D = get_node("Sword/Node2D/Sprite/Hitbox")
 @onready var health_bar = get_node("HealthBar")
 @onready var game = get_tree().current_scene
+@onready var dialogBox = $DialogBox
 var speed = 150
 
 func _ready():
+	dialogBox.visible = false
 	if health_bar != null:
 		health_bar.init_health(hp)
 
@@ -64,7 +67,7 @@ func take_damage(dam: int, dir: Vector2, force: int) -> void:
 
 
 func _on_area_2d_area_entered(area):
-	if GlobalVariables.num_of_enemies <= 0:
+	if GlobalVariables.total_enemies_to_be_spawned <= 0:	
 		if area.is_in_group("go_to_second_room"):
 			var second_room_node = second_room.instantiate()
 			var first_room_node = game.get_node("EntryRoom")
@@ -76,7 +79,7 @@ func _on_area_2d_area_entered(area):
 			game.remove_child(first_room_node)
 			self.position.x = 73.25
 			self.position.y = 225	
-		elif area.is_in_group("go_to_boss"):
+		elif area.is_in_group("go_to_boss_room"):
 			var second_room_node = game.get_node("SecondRoom")
 			var boss_room_node = boss_room.instantiate()
 			TransitionScene.transition()
@@ -85,7 +88,8 @@ func _on_area_2d_area_entered(area):
 			game.add_child(boss_room_node)
 			game.move_child(boss_room_node,0)
 			game.remove_child(second_room_node)
-			
+		
+		dialogBox.visible = false
 		# ma gandeam sa-i resetam hp-ul cand trece la o camera noua
 		self.hp = 100
 		health_bar.set_health(hp)
