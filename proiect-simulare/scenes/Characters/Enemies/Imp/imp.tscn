@@ -15,7 +15,7 @@
 [ext_resource type="Script" path="res://scenes/Characters/Enemies/Imp/ImpFiniteStateMachine.gd" id="13_8jcux"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ynr6y"]
-radius = 8.0
+radius = 7.07107
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_g1skm"]
 animations = [{
@@ -271,7 +271,7 @@ _data = {
 }
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_bahga"]
-radius = 9.05539
+radius = 9.0
 
 [node name="Imp" instance=ExtResource("1_2edhy")]
 script = ExtResource("2_au4kk")
@@ -301,7 +301,6 @@ collision_layer = 0
 collision_mask = 2
 script = ExtResource("12_ia8on")
 damage = 15
-knockback_force = 600
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox" index="0"]
 position = Vector2(1, 2)

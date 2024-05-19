@@ -7,11 +7,11 @@ func _init() -> void:
 	
 func _ready() -> void:
 	set_state(states.run)
-
-func _state_logic(_delta: float) -> void:
-	if state == states.run:
-		parent.chase()
-		parent.move()
+#
+#func _state_logic(_delta: float) -> void:
+	#if state == states.run:
+		#parent.chase()
+		#parent.move()
 	
 
 func _get_transition() -> int:
@@ -27,6 +27,7 @@ func _enter_state(_previous_state: int, _new_state: int) -> void:
 	if _new_state == states.hurt:
 		animation_player.play("hurt")
 	if _new_state == states.dead:
-		GlobalVariables.num_of_enemies -= 1
 		animation_player.play("dead")
+		GlobalVariables.enemies_remaining_room_two -= 1
+		print("Au mai ramas: ", GlobalVariables.enemies_remaining_room_two, GlobalVariables.enemies_spawned_room_two)
 

@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://d2a41nqkxmcw7"]
+[gd_scene load_steps=6 format=3 uid="uid://d2a41nqkxmcw7"]
 
 [ext_resource type="PackedScene" uid="uid://dw87yomj4hlsk" path="res://scenes/Rooms/EntryRoom.tscn" id="1_04kkj"]
 [ext_resource type="Script" path="res://Game.gd" id="1_r58b4"]
 [ext_resource type="PackedScene" uid="uid://cn6aqeu2v6qlb" path="res://scenes/Menu/PauseMenu.tscn" id="4_33v5x"]
 [ext_resource type="PackedScene" uid="uid://cf3apfmjgsdjf" path="res://scenes/Characters/Player/player.tscn" id="4_hy33g"]
+[ext_resource type="FontFile" uid="uid://dxb8nlf740d6q" path="res://art/fonts/PixelOperator8.ttf" id="5_bh255"]
 
 [node name="Game" type="Node2D"]
 position = Vector2(143, 19)
@@ -30,5 +31,38 @@ offset_bottom = 121.0
 [node name="Timer" type="Timer" parent="."]
 process_callback = 0
 wait_time = 5.0
+
+[node name="LabelFirstRoom" type="Label" parent="."]
+visible = false
+offset_left = 23.0
+offset_top = 26.0
+offset_right = 201.0
+offset_bottom = 49.0
+theme_override_fonts/font = ExtResource("5_bh255")
+theme_override_font_sizes/font_size = 8
+text = "Good job! Kill any enemy
+that's left and find the exit!"
+
+[node name="LabelSecondRoom" type="Label" parent="."]
+visible = false
+offset_left = 23.0
+offset_top = 26.0
+offset_right = 201.0
+offset_bottom = 49.0
+theme_override_fonts/font = ExtResource("5_bh255")
+theme_override_font_sizes/font_size = 8
+text = "Good job! Find the exit
+and get ready for the boss!"
+
+[node name="LabelThirdRoom" type="Label" parent="."]
+visible = false
+offset_left = 23.0
+offset_top = 26.0
+offset_right = 201.0
+offset_bottom = 49.0
+theme_override_fonts/font = ExtResource("5_bh255")
+theme_override_font_sizes/font_size = 8
+text = "Good job! Find the exit
+and get ready for the boss!"
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

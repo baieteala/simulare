@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://cai7lhxwm828r"]
+[gd_scene load_steps=4 format=3 uid="uid://cai7lhxwm828r"]
 
 [ext_resource type="Script" path="res://scenes/Menu/Menu.gd" id="1_s1o4b"]
 [ext_resource type="Texture2D" uid="uid://bdcxwoj8q4kb5" path="res://art/menu_background.jpeg" id="2_vunxh"]
+[ext_resource type="FontFile" uid="uid://drldd2tmenixa" path="res://art/fonts/PixelOperator8-Bold.ttf" id="3_g11ve"]
 
 [node name="Menu" type="Control"]
 layout_mode = 3
@@ -36,14 +37,20 @@ layout_mode = 2
 
 [node name="Play" type="Button" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("3_g11ve")
+theme_override_font_sizes/font_size = 16
 text = "Play"
 
 [node name="Settings" type="Button" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("3_g11ve")
+theme_override_font_sizes/font_size = 16
 text = "Settings"
 
 [node name="Quit" type="Button" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("3_g11ve")
+theme_override_font_sizes/font_size = 16
 text = "Quit"
 
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Play" to="." method="_on_play_pressed"]

@@ -3,18 +3,35 @@ extends Node2D
 @onready var pause_menu = $PauseMenu
 @onready var game = $"."
 @onready var dialogBox = get_node("Player").get_node("DialogBox")
-@onready var dialogBoxText = dialogBox.get_node("Panel").get_node("RichTextLabel")
+@onready var firstRoomLabel = $LabelFirstRoom
+@onready var secondRoomLabel = $LabelSecondRoom
+@onready var thirdRoomLabel = $LabelThirdRoom
 
 var state = false
 var room
 var time_passed : float = 0
-const text = "Now I have to find a way out!!!"
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	if Input.is_action_pressed("pause"):
 		pause()
+	if GlobalVariables.room == 1:
+		secondRoomLabel.hide()
+		thirdRoomLabel.hide()
+		if GlobalVariables.enemies_spawned_room_one >= 12 and GlobalVariables.enemies_remaining_room_one <= 0:
+			firstRoomLabel.show()
+	elif GlobalVariables.room == 2:
+		firstRoomLabel.hide()		
+		if GlobalVariables.enemies_spawned_room_two >= 6 and GlobalVariables.enemies_remaining_room_two <= 0:
+			secondRoomLabel.show()
+	elif GlobalVariables.room == 3:
+		secondRoomLabel.hide()		
+		if GlobalVariables.boss_alive == 0:
+			thirdRoomLabel.show()
 		
 func _ready():
+	firstRoomLabel.hide()
+	secondRoomLabel.hide()
+	thirdRoomLabel.hide()
 	GlobalVariables.timer = get_node("Timer")
 	GlobalVariables.timer.start()
 
@@ -44,7 +61,5 @@ func _on_timer_timeout():
 			room = game.get_node("BossRoom").name
 		SpawnEnemy.spawn_enemy(room)
 	else:
-		dialogBox.visible = true
-		dialogBoxText.append_text(text)
 		GlobalVariables.timer.stop()
 		self.reset_time_passed()

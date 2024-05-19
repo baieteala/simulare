@@ -12,14 +12,14 @@ var state: int = -1: set = set_state
 
 func _physics_process(delta: float) -> void:
 	if state != -1:
-		_state_logic(delta)
+		#_state_logic(delta)
 		var transition: int = _get_transition()
 		if transition != -1:
 			set_state(transition)
 
-
-func _state_logic(_delta: float) -> void:
-	pass
+#
+#func _state_logic(_delta: float) -> void:
+	#pass
 
 
 func _get_transition() -> int:

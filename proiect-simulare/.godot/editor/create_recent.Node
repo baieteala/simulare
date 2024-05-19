@@ -1,3 +1,5 @@
+Label
+NavigationAgent2D
 RichTextLabel
 Panel
 Control
@@ -10,5 +12,3 @@ Timer
 AnimationPlayer
 ColorRect
 CanvasLayer
-CenterContainer
-Label

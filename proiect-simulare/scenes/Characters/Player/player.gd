@@ -10,11 +10,11 @@ const boss_room = preload("res://scenes/Rooms/BossRoom.tscn")
 @onready var sword_hitbox: Area2D = get_node("Sword/Node2D/Sprite/Hitbox")
 @onready var health_bar = get_node("HealthBar")
 @onready var game = get_tree().current_scene
-@onready var dialogBox = $DialogBox
 var speed = 150
 
 func _ready():
-	dialogBox.visible = false
+	# TODO SCHIMBA INAPOI
+	hp = 1000
 	if health_bar != null:
 		health_bar.init_health(hp)
 
@@ -29,7 +29,6 @@ func _process(_delta: float) -> void:
 		animated_sprite.flip_h = true
 		
 	sword.rotation = dir.angle()
-	sword_hitbox.knockback_dir = dir
 	if sword.scale.y == 1 and dir.x < 0:
 		sword.scale.y = -1
 	elif sword.scale.y == -1 and dir.x > 0:
@@ -53,22 +52,23 @@ func _physics_process(delta):
 	velocity = direction * speed
 	move_and_slide()
 
-func take_damage(dam: int, dir: Vector2, force: int) -> void:
-	print('damage taken - player')
+func take_damage(dam: int) -> void:
 	self.hp -= dam
 	if health_bar != null:
 		health_bar.set_health(self.hp)
 	if hp > 0:
 		state_machine.set_state(state_machine.states.hurt)
-		velocity += dir * force
 	else:
 		state_machine.set_state(state_machine.states.dead)
-		velocity += dir * force * 2
 
 
 func _on_area_2d_area_entered(area):
-	if GlobalVariables.total_enemies_to_be_spawned <= 0:	
+	if GlobalVariables.enemies_remaining_room_one <= 0 and GlobalVariables.enemies_spawned_room_one >= 12:
+		GlobalVariables.enemies_remaining_room_one = 1000
+		print("am ajuns aici!!")	
 		if area.is_in_group("go_to_second_room"):
+			print("am ajuns SI aici")
+			GlobalVariables.room = 2
 			var second_room_node = second_room.instantiate()
 			var first_room_node = game.get_node("EntryRoom")
 			TransitionScene.transition()
@@ -79,7 +79,10 @@ func _on_area_2d_area_entered(area):
 			game.remove_child(first_room_node)
 			self.position.x = 73.25
 			self.position.y = 225	
-		elif area.is_in_group("go_to_boss_room"):
+	elif GlobalVariables.enemies_remaining_room_two <= 0 and GlobalVariables.enemies_spawned_room_two >= 6:
+		GlobalVariables.enemies_remaining_room_two = 1000
+		if area.is_in_group("go_to_boss_room"):
+			GlobalVariables.room = 3
 			var second_room_node = game.get_node("SecondRoom")
 			var boss_room_node = boss_room.instantiate()
 			TransitionScene.transition()
@@ -89,7 +92,6 @@ func _on_area_2d_area_entered(area):
 			game.move_child(boss_room_node,0)
 			game.remove_child(second_room_node)
 		
-		dialogBox.visible = false
 		# ma gandeam sa-i resetam hp-ul cand trece la o camera noua
 		self.hp = 100
 		health_bar.set_health(hp)

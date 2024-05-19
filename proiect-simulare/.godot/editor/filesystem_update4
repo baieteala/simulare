@@ -13,3 +13,17 @@ res://scenes/HealthBar/HealthBar.tscn
 res://scenes/Characters/Enemies/Imp/imp.tscn
 res://scenes/Other/HealthPotion.tscn
 res://Utils/SpawnEnemy.gd
+res://scenes/Characters/Enemies/enemy.gd
+res://scenes/Characters/Hitbox.gd
+res://scenes/Characters/Enemies/Imp/imp.gd
+res://scenes/Characters/Enemies/Orc/orc.gd
+res://scenes/Characters/Player/player.gd
+res://scenes/Characters/Player/FiniteStateMachine.gd
+res://scenes/Characters/FSM.gd
+res://scenes/Characters/Enemies/Imp/ImpFiniteStateMachine.gd
+res://scenes/Characters/Enemies/Orc/OrcFiniteStateMachine.gd
+res://Game.gd
+res://scenes/Rooms/SecondRoom.gd
+res://Utils/GlobalVariables.gd
+res://scenes/Menu/Menu.tscn
+res://scenes/Characters/character.gd

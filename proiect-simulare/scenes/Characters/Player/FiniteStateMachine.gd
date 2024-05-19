@@ -9,9 +9,9 @@ func _init() -> void:
 func _ready() -> void:
 	set_state(states.idle)
 	
-func _state_logic(_delta: float) -> void:
-	if state == states.idle or state == states.move:
-		parent.player_input()
+#func _state_logic(_delta: float) -> void:
+	#if state == states.idle or state == states.move:
+		#parent.player_input()
 	#parent.move()
 	
 
