@@ -2,7 +2,6 @@ extends Node2D
 
 @onready var pause_menu = $PauseMenu
 @onready var game = $"."
-@onready var dialogBox = get_node("Player").get_node("DialogBox")
 @onready var firstRoomLabel = $LabelFirstRoom
 @onready var secondRoomLabel = $LabelSecondRoom
 @onready var thirdRoomLabel = $LabelThirdRoom
@@ -52,7 +51,7 @@ func pause():
 		
 func _on_timer_timeout():
 	time_passed += GlobalVariables.timer.time_left
-	if time_passed <= 30:
+	if time_passed <= 30 and GlobalVariables.room != 3:
 		if game.get_node("EntryRoom") != null:
 			room = game.get_node("EntryRoom").name
 		elif game.get_node("SecondRoom") != null:

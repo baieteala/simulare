@@ -2,7 +2,7 @@ extends Area2D
 class_name Hitbox
 
 # TODO SCHIMBA INAPOI
-@export var damage: int = 100
+@export var damage: int = 10
 
 @onready var collision_shape: CollisionShape2D = get_child(0)
 

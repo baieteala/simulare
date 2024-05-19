@@ -6,3 +6,7 @@ res://Game.tscn
 res://scenes/Rooms/SecondRoom.tscn
 res://scenes/Characters/Enemies/Boss/boss.tscn
 res://scenes/Rooms/BossRoom.tscn
+res://scenes/Characters/Player/player.gd
+res://Game.gd
+res://scenes/Characters/Enemies/enemy.tscn
+res://scenes/Characters/Hitbox.gd

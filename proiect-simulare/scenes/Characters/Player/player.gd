@@ -14,11 +14,12 @@ var speed = 150
 
 func _ready():
 	# TODO SCHIMBA INAPOI
-	hp = 1000
+	hp = 100
 	if health_bar != null:
 		health_bar.init_health(hp)
 
 func _process(_delta: float) -> void:
+	#(hp)
 	player_input()
 
 	var dir: Vector2 = (get_global_mouse_position() - global_position).normalized()
