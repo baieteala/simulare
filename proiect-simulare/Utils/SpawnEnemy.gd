@@ -19,11 +19,11 @@ func spawn_enemy(room):
 	elif room == "SecondRoom":
 		for n in 2:
 			var random_entity
-			var random_index : int = randi() % enemy_array.size()
-			if enemy_array[random_index] == "orc":
-				random_entity = orc.instantiate()
-			elif enemy_array[random_index] == "imp":
-				random_entity = imp.instantiate()
+			#var random_index : int = randi() % enemy_array.size()
+			#if enemy_array[random_index] == "orc":
+				#random_entity = orc.instantiate()
+			#elif enemy_array[random_index] == "imp":
+			random_entity = imp.instantiate()
 			random_entity.position = Vector2(randf_range(0,480),randf_range(0,270))
 			game.add_child(random_entity)
 			GlobalVariables.num_of_enemies += 1

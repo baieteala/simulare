@@ -1,9 +1,8 @@
-[gd_scene load_steps=23 format=3 uid="uid://b86u3dj5buo8c"]
+[gd_scene load_steps=22 format=3 uid="uid://b86u3dj5buo8c"]
 
 [ext_resource type="PackedScene" uid="uid://bp1n2grflfda4" path="res://scenes/Characters/Enemies/enemy.tscn" id="1_2edhy"]
-[ext_resource type="Script" path="res://scenes/Characters/Enemies/Orc/orc.gd" id="2_mpgk0"]
+[ext_resource type="Script" path="res://scenes/Characters/Enemies/Imp/imp.gd" id="2_au4kk"]
 [ext_resource type="PackedScene" uid="uid://cyxlvmf2r353j" path="res://scenes/HealthBar/HealthBar.tscn" id="3_4t5ws"]
-[ext_resource type="PackedScene" uid="uid://dbhw5u4525t85" path="res://scenes/Characters/Enemies/Orc/orc.tscn" id="4_2jvsl"]
 [ext_resource type="Texture2D" uid="uid://civwdn6xu6vv4" path="res://art/tiles_simulare/frames/enemy_afterdead_explosion_anim_f0.png" id="4_ioh4v"]
 [ext_resource type="Texture2D" uid="uid://dp0ss7hnr27oe" path="res://art/tiles_simulare/frames/enemy_afterdead_explosion_anim_f1.png" id="5_b257x"]
 [ext_resource type="Texture2D" uid="uid://bcxv6gcgii7ld" path="res://art/tiles_simulare/frames/enemy_afterdead_explosion_anim_f2.png" id="6_gcegw"]
@@ -13,7 +12,7 @@
 [ext_resource type="Texture2D" uid="uid://br4t3l26q5pf1" path="res://art/tiles_simulare/frames/imp_run_anim_f2.png" id="10_x8d8c"]
 [ext_resource type="Texture2D" uid="uid://6fr3ogcqd76r" path="res://art/tiles_simulare/frames/imp_run_anim_f3.png" id="11_fmb17"]
 [ext_resource type="Script" path="res://scenes/Characters/Hitbox.gd" id="12_ia8on"]
-[ext_resource type="Script" path="res://scenes/Characters/Enemies/Orc/OrcFiniteStateMachine.gd" id="13_g1m1y"]
+[ext_resource type="Script" path="res://scenes/Characters/Enemies/Imp/ImpFiniteStateMachine.gd" id="13_8jcux"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ynr6y"]
 radius = 8.0
@@ -275,7 +274,7 @@ _data = {
 radius = 9.05539
 
 [node name="Imp" instance=ExtResource("1_2edhy")]
-script = ExtResource("2_mpgk0")
+script = ExtResource("2_au4kk")
 
 [node name="HealthBar" parent="." index="0" instance=ExtResource("3_4t5ws")]
 offset_left = -5.0
@@ -286,8 +285,6 @@ offset_bottom = -6.0
 [node name="CollisionShape2D" parent="." index="1"]
 position = Vector2(1, 2)
 shape = SubResource("CircleShape2D_ynr6y")
-
-[node name="Imp" parent="Area2D" index="0" instance=ExtResource("4_2jvsl")]
 
 [node name="AnimatedSprite2D" parent="." index="3"]
 visible = false
@@ -312,4 +309,4 @@ shape = SubResource("CircleShape2D_bahga")
 disabled = true
 
 [node name="FiniteStateMachine" parent="." index="7"]
-script = ExtResource("13_g1m1y")
+script = ExtResource("13_8jcux")
