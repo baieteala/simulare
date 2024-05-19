@@ -13,7 +13,7 @@ func _ready():
 
 
 func take_damage(dam: int, dir: Vector2, force: int) -> void:
-	print('damage taken - orc')
+	print('damage taken - imp')
 	hp -= dam
 	if healthbar != null:
 		healthbar.set_health(hp)

@@ -39,4 +39,3 @@ func _enter_state(_previous_state: int, new_state: int) -> void:
 		animation_player.play("hurt")
 	elif new_state == states.dead:
 		animation_player.play("dead")
-	

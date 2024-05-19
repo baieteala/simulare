@@ -1,8 +1,9 @@
-[gd_scene load_steps=22 format=3 uid="uid://b86u3dj5buo8c"]
+[gd_scene load_steps=23 format=3 uid="uid://b86u3dj5buo8c"]
 
 [ext_resource type="PackedScene" uid="uid://bp1n2grflfda4" path="res://scenes/Characters/Enemies/enemy.tscn" id="1_2edhy"]
 [ext_resource type="Script" path="res://scenes/Characters/Enemies/Orc/orc.gd" id="2_mpgk0"]
 [ext_resource type="PackedScene" uid="uid://cyxlvmf2r353j" path="res://scenes/HealthBar/HealthBar.tscn" id="3_4t5ws"]
+[ext_resource type="PackedScene" uid="uid://dbhw5u4525t85" path="res://scenes/Characters/Enemies/Orc/orc.tscn" id="4_2jvsl"]
 [ext_resource type="Texture2D" uid="uid://civwdn6xu6vv4" path="res://art/tiles_simulare/frames/enemy_afterdead_explosion_anim_f0.png" id="4_ioh4v"]
 [ext_resource type="Texture2D" uid="uid://dp0ss7hnr27oe" path="res://art/tiles_simulare/frames/enemy_afterdead_explosion_anim_f1.png" id="5_b257x"]
 [ext_resource type="Texture2D" uid="uid://bcxv6gcgii7ld" path="res://art/tiles_simulare/frames/enemy_afterdead_explosion_anim_f2.png" id="6_gcegw"]
@@ -286,6 +287,8 @@ offset_bottom = -6.0
 position = Vector2(1, 2)
 shape = SubResource("CircleShape2D_ynr6y")
 
+[node name="Imp" parent="Area2D" index="0" instance=ExtResource("4_2jvsl")]
+
 [node name="AnimatedSprite2D" parent="." index="3"]
 visible = false
 sprite_frames = SubResource("SpriteFrames_g1skm")
@@ -300,6 +303,8 @@ libraries = {
 collision_layer = 0
 collision_mask = 2
 script = ExtResource("12_ia8on")
+damage = 15
+knockback_force = 600
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox" index="0"]
 position = Vector2(1, 2)

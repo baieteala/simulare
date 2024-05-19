@@ -8,7 +8,7 @@ const boss_room = preload("res://scenes/Rooms/BossRoom.tscn")
 @onready var sword_animation: AnimationPlayer = sword.get_node("SwordAnimation")
 @onready var sword_hitbox: Area2D = get_node("Sword/Node2D/Sprite/Hitbox")
 @onready var health_bar = get_node("HealthBar")
-@onready var game = get_tree().get_current_scene()
+@onready var game = get_tree().current_scene
 var speed = 150
 
 func _ready():
@@ -64,11 +64,10 @@ func take_damage(dam: int, dir: Vector2, force: int) -> void:
 
 
 func _on_area_2d_area_entered(area):
-	print("am intrat, nr de mobi: ", GlobalVariables.num_of_enemies)
 	if GlobalVariables.num_of_enemies <= 0:
 		if area.is_in_group("go_to_second_room"):
 			var second_room_node = second_room.instantiate()
-			var first_room_node = get_tree().current_scene.get_node("EntryRoom")
+			var first_room_node = game.get_node("EntryRoom")
 			TransitionScene.transition()
 			await TransitionScene.on_transition_finished	
 			GlobalVariables.timer.stop()
@@ -86,3 +85,7 @@ func _on_area_2d_area_entered(area):
 			game.add_child(boss_room_node)
 			game.move_child(boss_room_node,0)
 			game.remove_child(second_room_node)
+			
+		# ma gandeam sa-i resetam hp-ul cand trece la o camera noua
+		self.hp = 100
+		health_bar.set_health(hp)

@@ -15,7 +15,6 @@ signal hp_changed(new_hp)
 @onready var state_machine: Node = get_node("FiniteStateMachine")
 var movingDirection: Vector2 = Vector2.ZERO
 
-
 func _physics_process(delta: float) -> void:
 	move_and_slide()
 	velocity = lerp(velocity, Vector2.ZERO, FRICTION)

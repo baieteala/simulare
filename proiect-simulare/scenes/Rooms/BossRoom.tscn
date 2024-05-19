@@ -1,3 +1,6 @@
-[gd_scene format=3 uid="uid://dnev3nxgbwvfq"]
+[gd_scene load_steps=2 format=3 uid="uid://dnev3nxgbwvfq"]
+
+[ext_resource type="Script" path="res://scenes/Rooms/BossRoom.gd" id="1_81lok"]
 
 [node name="BossRoom" type="Area2D"]
+script = ExtResource("1_81lok")

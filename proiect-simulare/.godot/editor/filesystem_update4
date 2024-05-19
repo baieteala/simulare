@@ -18,3 +18,8 @@ res://scenes/Characters/Enemies/Orc/orc.tscn
 res://scenes/Characters/Enemies/Imp/imp.gd
 res://scenes/Characters/Enemies/Imp/imp.tscn
 res://Utils/TimerLogic.gd
+res://Utils/SpawnEnemy.gd
+res://scenes/Rooms/BossRoom.gd
+res://scenes/Characters/Player/FiniteStateMachine.gd
+res://scenes/Characters/character.gd
+res://scenes/HealthBar/HealthBar.tscn

@@ -20,6 +20,7 @@ config/icon="res://icon.png"
 BackgroundMusic="res://BackgroundMusic.tscn"
 TransitionScene="*res://Utils/TransitionScene.tscn"
 GlobalVariables="*res://Utils/GlobalVariables.gd"
+SpawnEnemy="*res://Utils/SpawnEnemy.gd"
 
 [display]
 
@@ -28,6 +29,7 @@ window/size/viewport_height=270
 window/size/window_width_override=1280
 window/size/window_height_override=720
 window/stretch/mode="canvas_items"
+mouse_cursor/custom_image="res://art/cursor/cursor_dead.png"
 
 [gui]
 
