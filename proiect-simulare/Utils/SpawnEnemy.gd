@@ -17,17 +17,12 @@ func spawn_enemy(room):
 			GlobalVariables.num_of_enemies += 1
 			GlobalVariables.total_enemies_to_be_spawned -= 1
 	elif room == "SecondRoom":
-		for n in 2:
-			var random_entity
-			#var random_index : int = randi() % enemy_array.size()
-			#if enemy_array[random_index] == "orc":
-				#random_entity = orc.instantiate()
-			#elif enemy_array[random_index] == "imp":
-			random_entity = imp.instantiate()
-			random_entity.position = Vector2(randf_range(0,480),randf_range(0,270))
-			game.add_child(random_entity)
-			GlobalVariables.num_of_enemies += 1
-			GlobalVariables.total_enemies_to_be_spawned -= 1	
+		var random_entity
+		random_entity = imp.instantiate()
+		random_entity.position = Vector2(randf_range(0,480),randf_range(0,270))
+		game.add_child(random_entity)
+		GlobalVariables.num_of_enemies += 1
+		GlobalVariables.total_enemies_to_be_spawned -= 1	
 	elif room == "BossRoom":
 		# fa-ti talentul :))))
 		pass

@@ -16,7 +16,7 @@ position = Vector2(-140, -18)
 constrain_avoidance = true
 
 [node name="Player" parent="." instance=ExtResource("4_hy33g")]
-position = Vector2(217, 126)
+position = Vector2(219, 133)
 
 [node name="PauseMenu" parent="." instance=ExtResource("4_33v5x")]
 process_mode = 2

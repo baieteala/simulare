@@ -12,3 +12,4 @@ res://scenes/Characters/Enemies/Orc/orc.tscn
 res://scenes/HealthBar/HealthBar.tscn
 res://scenes/Characters/Enemies/Imp/imp.tscn
 res://scenes/Other/HealthPotion.tscn
+res://Utils/SpawnEnemy.gd
