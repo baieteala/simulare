@@ -27,3 +27,7 @@ res://scenes/Rooms/SecondRoom.gd
 res://Utils/GlobalVariables.gd
 res://scenes/Menu/Menu.tscn
 res://scenes/Characters/character.gd
+res://scenes/Characters/Enemies/Boss/boss.tscn
+res://scenes/Characters/Enemies/Boss/boss.gd
+res://scenes/Characters/Enemies/Boss/BossFiniteStateMachine.gd
+res://scenes/Rooms/BossRoom.gd

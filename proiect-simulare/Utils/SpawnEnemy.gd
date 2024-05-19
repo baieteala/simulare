@@ -2,6 +2,7 @@ extends Node
 
 var orc = preload("res://scenes/Characters/Enemies/Orc/orc.tscn")
 var imp = preload("res://scenes/Characters/Enemies/Imp/imp.tscn")
+var boss = preload("res://scenes/Characters/Enemies/Boss/boss.tscn")
 
 func spawn_enemy(room):
 	var game = get_tree().current_scene
@@ -24,5 +25,7 @@ func spawn_enemy(room):
 		game.add_child(imp_entity)
 		GlobalVariables.enemies_spawned_room_two += 1
 	elif room == "BossRoom":
-		# fa-ti talentul :))))
-		pass
+		var boss_entity = boss.instantiate()
+		boss_entity.position = Vector2(200, 150)
+		game.add_child(boss_entity)
+		

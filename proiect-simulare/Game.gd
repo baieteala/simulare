@@ -57,8 +57,6 @@ func _on_timer_timeout():
 			room = game.get_node("EntryRoom").name
 		elif game.get_node("SecondRoom") != null:
 			room = game.get_node("SecondRoom").name
-		elif game.get_node("BossRoom") != null:
-			room = game.get_node("BossRoom").name
 		SpawnEnemy.spawn_enemy(room)
 	else:
 		GlobalVariables.timer.stop()
