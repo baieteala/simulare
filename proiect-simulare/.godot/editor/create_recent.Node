@@ -1,3 +1,6 @@
+LightOccluder2D
+PointLight2D
+CanvasModulate
 Label
 NavigationAgent2D
 RichTextLabel
@@ -10,5 +13,3 @@ Node2D
 Marker2D
 Timer
 AnimationPlayer
-ColorRect
-CanvasLayer

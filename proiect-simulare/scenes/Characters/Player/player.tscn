@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=3 uid="uid://cf3apfmjgsdjf"]
+[gd_scene load_steps=33 format=3 uid="uid://cf3apfmjgsdjf"]
 
 [ext_resource type="PackedScene" uid="uid://juq161grfc21" path="res://scenes/Characters/character.tscn" id="1_kgb2a"]
 [ext_resource type="Script" path="res://scenes/Characters/Player/player.gd" id="2_dqwta"]
@@ -18,6 +18,7 @@
 [ext_resource type="Script" path="res://scenes/Characters/Player/FiniteStateMachine.gd" id="11_6rhfc"]
 [ext_resource type="Texture2D" uid="uid://t0plulgxmpag" path="res://art/tiles_simulare/frames/weapon_anime_sword.png" id="12_6blbv"]
 [ext_resource type="Script" path="res://scenes/Characters/Hitbox.gd" id="13_ful3i"]
+[ext_resource type="Texture2D" uid="uid://c8dvximkh1c86" path="res://art/light.png" id="19_3mqek"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_x6y1b"]
 radius = 9.0
@@ -458,5 +459,17 @@ position_smoothing_enabled = true
 
 [node name="FiniteStateMachine" parent="." index="7"]
 script = ExtResource("11_6rhfc")
+
+[node name="TextureLight" type="PointLight2D" parent="." index="8"]
+energy = 0.7
+texture = ExtResource("19_3mqek")
+
+[node name="Shadow" type="PointLight2D" parent="." index="9"]
+energy = 0.5
+shadow_enabled = true
+shadow_filter = 1
+shadow_filter_smooth = 3.0
+texture = ExtResource("19_3mqek")
+texture_scale = 0.5
 
 [connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
