@@ -4,11 +4,11 @@ Welcome to the **Roguelike Adventure Game** repository! This game is a roguelike
 
 ## Features
 
-    - **Three Unique Rooms**: Each room offers a distinct challenge and a variety of monsters to defeat.
-    - **Final Boss Battle**: The last room features a challenging boss that requires strategy and skill to defeat.
-    - **Advanced Gameplay Mechanics**:
-        - **Collision Detection**: Ensures realistic interactions between the player, enemies, and the environment.
-        - **Finite State Machines**: Used to manage enemy behaviors and transitions between different states.
+    - *Three Unique Rooms*: Each room offers a distinct challenge and a variety of monsters to defeat.
+    - *Final Boss Battle*: The last room features a challenging boss that requires strategy and skill to defeat.
+    - *Advanced Gameplay Mechanics*:
+        - *Collision Detection*: Ensures realistic interactions between the player, enemies, and the environment.
+        - *Finite State Machines*: Used to manage enemy behaviors and transitions between different states.
 
 ## Getting Started
 
