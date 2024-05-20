@@ -37,16 +37,16 @@ Welcome to the **Roguelike Adventure Game** repository! This game is a roguelike
 
 ### Game Instructions
 
-*Movement*: Use the arrow keys or WASD to move your character.
-*Attack*: Use the spacebar to attack enemies.
-*Objective*: Clear each room of enemies to proceed to the next one. Defeat the final boss in the last room to win the game.
+- *Movement*: Use the arrow keys or WASD to move your character.
+- *Attack*: Use the spacebar to attack enemies.
+- *Objective*: Clear each room of enemies to proceed to the next one. Defeat the final boss in the last room to win the game.
 
 
 ## Technical Details
 
 ### Collision Detection
-We used Godot's built-in collision detection systems to manage interactions between the player, enemies, and the environment. This ensures smooth and realistic movements and accurate recording of attacks and damage.
+We used Godot's built-in collision detection systems to manage interactions between the player, enemies and the environment. This ensures smooth and realistic movements and accurate recording of attacks and damage.
 
 
 ### Finite State Machines
-Each enemy uses a finite state machine (FSM) to manage different behaviors, such as patrolling, chasing the player, and attacking. This makes enemies more intelligent and unpredictable, enhancing the overall gameplay experience.
+Each enemy uses a finite state machine (FSM) to manage different behaviors, such as chasing the player and attacking. This makes enemies more intelligent and unpredictable, enhancing the overall gameplay experience.
