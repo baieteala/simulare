@@ -4,11 +4,11 @@ Welcome to the **Roguelike Adventure Game** repository! This game is a roguelike
 
 ## Features
 
-    - *Three Unique Rooms*: Each room offers a distinct challenge and a variety of monsters to defeat.
-    - *Final Boss Battle*: The last room features a challenging boss that requires strategy and skill to defeat.
-    - *Advanced Gameplay Mechanics*:
-        - *Collision Detection*: Ensures realistic interactions between the player, enemies, and the environment.
-        - *Finite State Machines*: Used to manage enemy behaviors and transitions between different states.
+- **Three Unique Rooms**: Each room offers a distinct challenge and a variety of monsters to defeat.
+- **Final Boss Battle**: The last room features a challenging boss that requires strategy and skill to defeat.
+- **Advanced Gameplay Mechanics**:
+    - **Collision Detection**: Ensures realistic interactions between the player, enemies, and the environment.
+    - **Finite State Machines**: Used to manage enemy behaviors and transitions between different states.
 
 ## Getting Started
 
@@ -35,18 +35,18 @@ Welcome to the **Roguelike Adventure Game** repository! This game is a roguelike
     Press the F5 key or click the play button (a triangular icon) in the top right corner of the Godot editor.
     The game will start, and you can begin your adventure.
 
--Game Instructions
+### Game Instructions
 
-    *Movement*: Use the arrow keys or WASD to move your character.
-    *Attack*: Use the spacebar to attack enemies.
-    *Objective*: Clear each room of enemies to proceed to the next one. Defeat the final boss in the last room to win the game.
+*Movement*: Use the arrow keys or WASD to move your character.
+*Attack*: Use the spacebar to attack enemies.
+*Objective*: Clear each room of enemies to proceed to the next one. Defeat the final boss in the last room to win the game.
 
 
 ## Technical Details
 
 ### Collision Detection
-    We used Godot's built-in collision detection systems to manage interactions between the player, enemies, and the environment. This ensures smooth and realistic movements and accurate recording of attacks and damage.
+We used Godot's built-in collision detection systems to manage interactions between the player, enemies, and the environment. This ensures smooth and realistic movements and accurate recording of attacks and damage.
 
 
 ### Finite State Machines
-    Each enemy uses a finite state machine (FSM) to manage different behaviors, such as patrolling, chasing the player, and attacking. This makes enemies more intelligent and unpredictable, enhancing the overall gameplay experience.
+Each enemy uses a finite state machine (FSM) to manage different behaviors, such as patrolling, chasing the player, and attacking. This makes enemies more intelligent and unpredictable, enhancing the overall gameplay experience.
