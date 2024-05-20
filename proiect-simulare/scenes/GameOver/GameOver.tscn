@@ -1,0 +1,38 @@
+[gd_scene load_steps=2 format=3 uid="uid://dup78lfwifrvw"]
+
+[ext_resource type="Script" path="res://scenes/GameOver/GameOver.gd" id="1_gtekl"]
+
+[node name="GameOver" type="CanvasLayer"]
+script = ExtResource("1_gtekl")
+
+[node name="Label" type="Label" parent="."]
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 212.0
+offset_top = 75.0
+offset_right = -181.0
+offset_bottom = -172.0
+text = "Game Over"
+
+[node name="Retry" type="Button" parent="."]
+offset_left = 226.0
+offset_top = 109.0
+offset_right = 279.0
+offset_bottom = 140.0
+text = "Retry"
+
+[node name="Quit" type="Button" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 226.0
+offset_top = 154.0
+offset_right = -201.0
+offset_bottom = -82.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Quit"
+
+[connection signal="pressed" from="Retry" to="." method="_on_retry_pressed"]
+[connection signal="pressed" from="Quit" to="." method="_on_quit_pressed"]

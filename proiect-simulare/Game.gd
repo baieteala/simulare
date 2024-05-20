@@ -5,7 +5,8 @@ extends Node2D
 @onready var firstRoomLabel = $LabelFirstRoom
 @onready var secondRoomLabel = $LabelSecondRoom
 @onready var thirdRoomLabel = $LabelThirdRoom
-
+@onready var game_over = $GameOver
+@onready var you_win = $YouWin
 var state = false
 var room
 var time_passed : float = 0
@@ -28,6 +29,8 @@ func _process(delta):
 			thirdRoomLabel.show()
 		
 func _ready():
+	game_over.visible = false
+	you_win.visible = false
 	firstRoomLabel.hide()
 	secondRoomLabel.hide()
 	thirdRoomLabel.hide()
@@ -48,7 +51,7 @@ func pause():
 		get_tree().paused = true
 		pause_menu.show()
 		state = true
-		
+
 func _on_timer_timeout():
 	time_passed += GlobalVariables.timer.time_left
 	if time_passed <= 30 and GlobalVariables.room != 3:

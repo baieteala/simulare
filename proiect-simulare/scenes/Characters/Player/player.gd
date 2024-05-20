@@ -10,6 +10,7 @@ const boss_room = preload("res://scenes/Rooms/BossRoom.tscn")
 @onready var sword_hitbox: Area2D = get_node("Sword/Node2D/Sprite/Hitbox")
 @onready var health_bar = get_node("HealthBar")
 @onready var game = get_tree().current_scene
+@onready var game_over = game.get_node("GameOver")
 var speed = 150
 
 func _ready():
@@ -21,7 +22,6 @@ func _ready():
 func _process(_delta: float) -> void:
 	#(hp)
 	player_input()
-
 	var dir: Vector2 = (get_global_mouse_position() - global_position).normalized()
 
 	if dir.x > 0 and animated_sprite.flip_h:
@@ -60,6 +60,7 @@ func take_damage(dam: int) -> void:
 	if hp > 0:
 		state_machine.set_state(state_machine.states.hurt)
 	else:
+		game_over.visible = true
 		state_machine.set_state(state_machine.states.dead)
 
 
@@ -80,6 +81,9 @@ func _on_area_2d_area_entered(area):
 			game.remove_child(first_room_node)
 			self.position.x = 73.25
 			self.position.y = 225	
+			# ma gandeam sa-i resetam hp-ul cand trece la o camera noua
+			self.hp = 100
+			health_bar.set_health(hp)
 	elif GlobalVariables.enemies_remaining_room_two <= 0 and GlobalVariables.enemies_spawned_room_two >= 6:
 		GlobalVariables.enemies_remaining_room_two = 1000
 		if area.is_in_group("go_to_boss_room"):
@@ -92,7 +96,6 @@ func _on_area_2d_area_entered(area):
 			game.add_child(boss_room_node)
 			game.move_child(boss_room_node,0)
 			game.remove_child(second_room_node)
-		
-		# ma gandeam sa-i resetam hp-ul cand trece la o camera noua
-		self.hp = 100
-		health_bar.set_health(hp)
+			# ma gandeam sa-i resetam hp-ul cand trece la o camera noua
+			self.hp = 100
+			health_bar.set_health(hp)

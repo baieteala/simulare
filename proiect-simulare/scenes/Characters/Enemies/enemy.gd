@@ -8,8 +8,8 @@ const DAMAGE_AMOUNT: int = 10  # Adjust damage amount as needed
 const speed = 35
 
 func chase() -> void:
-	navigation.target_position = player.global_position
-	
+	if(player != null):
+		navigation.target_position = player.global_position
 	
 func _physics_process(_delta: float):
 	var dir = to_local(navigation.get_next_path_position()).normalized()
